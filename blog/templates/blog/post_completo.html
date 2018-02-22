@@ -4,9 +4,9 @@
 {% endblock %}
 <small class="text-muted">
 {% block headingsmall %}
-{% if post.subtitulo %}
-{{ post.subtitulo }}
-{% endif %}
+    {% if post.subtitulo %}
+        {{ post.subtitulo }}
+    {% endif %}
 {% endblock %}
 {% block body %}
     <div class="content container">
@@ -19,10 +19,17 @@
                     {% endif %}
                 </div>
                 <div class="card border-light mb-3 mx-auto" style="max-width: auto;">
-                    <div class="card-header"><h4 class="mb-0"><i class="far fa-user"></i> Autor</h4></div>
+                    <div class="card-header px-auto">
+                        <div class="media px-auto">
+                            <img class="" id="fotoNavBar" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png" title="nombreUsuario" data-toggle="tooltip" data-placement="bottom">
+                            <div class="media-body ml-1">
+                                <h4 class="my-auto"><a href="" title="" class="text-primary">{{ post.autor }}</a></h4>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <h4 class="card-title"><a href="" title="" class="text-info">{{ post.autor }}</a></h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title"><a href="" title="" class="text-info">Titulo Comentario</a></h5>
+                        <p class="card-text">Cuerpo del comentario.</p>
                     </div>
                 </div>
             </div>

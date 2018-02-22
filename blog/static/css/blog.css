@@ -13,3 +13,13 @@ header nav ul li a i {
     width: 30px;
     border-radius: 50%;
 }
+
+.icoSep {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+footer p a i {
+    margin-right: 2px;
+    margin-left: 2px;
+}
