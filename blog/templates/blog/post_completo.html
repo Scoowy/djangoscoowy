@@ -1,0 +1,27 @@
+{% extends 'blog/esqueleto.html' %}
+{% block heading %}
+    <a href="#" class="text-primary">{{ post.titulo }}</a>
+{% endblock %}
+<small class="text-muted">
+{% block headingsmall %}Accion o Reaccion?!{% endblock %}
+{% block body %}
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container">
+                    <p class="text-justify">{{ post.texto|linebreaksbr }}</p>
+                    {% if post.fechaPublicacion %}
+                        <p class="small text-right">Publicado: {{ post.fechaPublicacion }}</p>
+                    {% endif %}
+                </div>
+                <div class="card border-light mb-3 mx-auto" style="max-width: auto;">
+                    <div class="card-header"><h4 class="mb-0"><i class="far fa-user"></i> Autor</h4></div>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="" title="" class="text-info">{{ post.autor }}</a></h4>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
