@@ -3,7 +3,11 @@
     <a href="#" class="text-primary">{{ post.titulo }}</a>
 {% endblock %}
 <small class="text-muted">
-{% block headingsmall %}Accion o Reaccion?!{% endblock %}
+{% block headingsmall %}
+{% if post.subtitulo %}
+{{ post.subtitulo }}
+{% endif %}
+{% endblock %}
 {% block body %}
     <div class="content container">
         <div class="row">

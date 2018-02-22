@@ -4,8 +4,10 @@ from .models import Post
 
 
 def lista_post(request):
+    # fechaPublicacion devuelve mas antigua
+    # -fechaPublicacion devuelve mas actual
     posts = Post.objects.filter(
-        fechaPublicacion__lte=timezone.now()).order_by('fechaPublicacion')
+        fechaPublicacion__lte=timezone.now()).order_by('-fechaPublicacion')
     return render(request, 'blog/lista_post.html', {'posts': posts})
 
 
