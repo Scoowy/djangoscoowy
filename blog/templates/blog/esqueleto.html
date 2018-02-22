@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Scoowy Blog{% endblock %}</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Scoowy Blog</a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarColor01" style="">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fas fa-home fa-fw"></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-code fa-fw"></i> Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-picture-o fa-fw"></i> Imagenes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i> Acera de</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" placeholder="Search" type="text">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
+            <h1>
+            {% block heading %}<a href="" class="text-primary">Ultimas entradas</a>{% endblock %}
+            <small class="text-muted">
+            {% block headingsmall %}Siempre actualizado...{% endblock %}
+            </small>
+            </h1>
+        </div>
+        <br>
+        {% block body %}{% endblock %}
+        <br>
+        <!-- Pie de Pagina -->
+        <footer class="footer">
+            <div class="container py-md-1">
+                <p class="my-md-0">
+                    <a href="#" data-toggle="tooltip" data-placement="auto" title="Scoowy Page">Scoowy Page</a> por <a href="#" data-toggle="tooltip" data-placement="auto" title="Scoowy">Juan Gahona</a> publicada bajo licencia <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" data-toggle="tooltip" data-placement="auto" title="Creative Commons Reconocimiento 4.0 Internacional"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+                </p>
+                <p class="my-md-0">
+                    Sigueme en
+                    <a href="https://www.facebook.com/NaNoJuanjo" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/nanojuanjo/" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/Scoowy" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.twitch.tv/scoowy" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Twitch"><i class="fab fa-twitch"></i></a>
+                    <a href="https://plus.google.com/u/0/117470164603206636349" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Google+"><i class="fab fa-google-plus"></i></a>. Contactame
+                    <a href="mailto:gahonajuanjo@gmail.com" data-toggle="tooltip" data-placement="auto" title="Juan Gahona - Gmail"><i class="fas fa-envelope"></i></a>
+                </p>
+                <p class="my-md-0">
+                    Basado en
+                    <a href="https://getbootstrap.com" data-toggle="tooltip" data-placement="auto" title="Bootstrap oficial" rel="nofollow">Bootstrap</a>. Iconos de
+                    <a href="http://fontawesome.io/" data-toggle="tooltip" data-placement="auto" title="Fontawesome oficial" rel="nofollow">Font Awesome</a>. Web fonts de
+                    <a href="https://fonts.google.com/" data-toggle="tooltip" data-placement="auto" title="Google Fonts oficial" rel="nofollow">Google</a>.
+                </p>
+            </div>
+        </footer>
+        <!-- Fin Pie de Pagina -->
+        <!-- Scrip que permite el popper -->
+        <script>
+        $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        });
+        </script>
+        <!-- FIN Scrip que permite el popper -->
+    </body>
+</html>

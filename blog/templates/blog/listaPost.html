@@ -7,6 +7,7 @@
         <title>Scoowy Blog DJango</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -20,16 +21,16 @@
             <div class="navbar-collapse collapse" id="navbarColor01" style="">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#"><i class="fas fa-home fa-fw"></i> Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#"><i class="fas fa-code fa-fw"></i> Proyectos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#"><i class="fas fa-picture-o fa-fw"></i> Imagenes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i> Acera de</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -40,33 +41,33 @@
         </nav>
         <br>
         <div class="container">
-            <h1><a href="" class="text-primary">Django Scoowy Blog</a>
-            <small class="text-muted">Intentando innovar...</small></h1>
+            <h1><a href="" class="text-primary">Ultimas entradas</a>
+            <small class="text-muted">Siempre actualizado...</small></h1>
         </div>
         <br>
         
         <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for post in posts %}
+            {% for post in posts %}
+                <div class="row">
+                    <div class="col-md-8">
                         <div class="container">
                             <h1><a href="">{{ post.titulo }}</a></h1>
                             <p class="text-justify">{{ post.texto|linebreaksbr }}</p>
                             <p class="small text-right">Publicado: {{ post.fechaPublicacion }}</p>
                             <hr>
                         </div>
-                    {% endfor %}
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-light mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Noticias</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Titulo de la noticia</h4>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-light mb-3 mx-auto" style="max-width: 20rem;">
+                            <div class="card-header"><h4 class="mb-0"><i class="far fa-user"></i> Autor</h4></div>
+                            <div class="card-body">
+                                <h4 class="card-title"><a href="" title="" class="text-info">{{ post.autor }}</a></h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </body>
 </html>
