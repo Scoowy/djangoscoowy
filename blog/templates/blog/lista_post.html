@@ -8,31 +8,30 @@
     <div class="content container">
         {% for post in posts %}
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="container">
                         <h2><a href="{% url 'post_completo' pk=post.pk %}">{{ post.titulo }}</a></h2>
                         <p class="text-justify">{{ post.texto|linebreaksbr }}</p>
-                        <p class="small text-right">Publicado: {{ post.fechaPublicacion }}</p>
-                        <hr>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card border-light mb-3 mx-auto" style="max-width: 20rem;">
-                        <div class="card-header">
-                            <div class="media py-auto">
-                                <img class="mr-2" id="fotoNavBar" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png" title="nombreUsuario" data-toggle="tooltip" data-placement="bottom">
-                                <div class="media-body">
+                <div class="col-md-3">
+                    <div class="card border-light" style="/*max-width: 20rem;*/">
+                        <div class="card-header px-auto">
+                            <div class="media px-auto">
+                                <img class="" id="fotoNavBar" src="https://www.1plusx.com/app/mu-plugins/all-in-one-seo-pack-pro/images/default-user-image.png" title="nombreUsuario" data-toggle="tooltip" data-placement="bottom">
+                                <div class="media-body ml-1">
                                     <h4 class="my-auto"><a href="" title="" class="text-primary">{{ post.autor }}</a></h4>
                                 </div>
-                                
                             </div>
                         </div>
                         <div class="card-body">
                             <p class="card-text">Meta Tags del usuario.</p>
                         </div>
                     </div>
+                    <p class="small text-right mt-2 mb-0">Publicado: {{ post.fechaPublicacion }}</p>
                 </div>
             </div>
+            <hr class="mt-2 pb-3">
         {% endfor %}
     </div>
 {% endblock %}
