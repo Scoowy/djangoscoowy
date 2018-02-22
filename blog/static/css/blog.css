@@ -1,0 +1,15 @@
+header nav ul li a i {
+    margin-right: 5px;
+}
+
+#imagenAutor {
+    margin-right: 5px;
+    background-color: tomato;
+    border-radius: 50%;
+}
+
+#fotoNavBar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
