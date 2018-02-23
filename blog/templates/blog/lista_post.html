@@ -40,6 +40,7 @@
                     <a href="{% url 'post_completo' pk=post.pk %}"><button type="button" class="btn btn-secondary">Otra ventana</button></a>
                 </div>
             </div>
+
             <!-- Modal -->
             <div class="modal fade" id="articuloModal{{ post.id }}" tabindex="-1" role="dialog" aria-labelledby="articuloModalTitulo" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -84,13 +85,15 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                             <button type="button" class="btn btn-primary">Un boton</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
             </div>
             <hr class="mt-2 pb-3">
+            <!-- End Modal -->
+            
         {% endfor %}
     </div>
 {% endblock %}

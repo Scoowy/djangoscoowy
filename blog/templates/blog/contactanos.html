@@ -1,0 +1,24 @@
+{% extends 'blog/esqueleto.html' %}
+{% block heading %}
+    <a href="#" class="text-primary">Contactanos</a>
+{% endblock %}
+<small class="text-muted">
+{% block headingsmall %}
+    Tal vez respondamos...
+{% endblock %}
+{% block body %}
+    <div class="content container">
+        <div class="row pt-2">
+            <div class="col-md-12 px-5">
+                <form action="" method="POST">
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                    <div class="form-group row">
+                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
