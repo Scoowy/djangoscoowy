@@ -1,0 +1,36 @@
+{% extends 'blog/esqueleto.html' %}
+{% block heading %}
+    {% if query %}
+        <a href="#" class="text-primary">Encontrados</a>
+        {% block headingsmall %}
+            <small class="text-muted">{{ numResultados }} resultados</small>
+        {% endblock %}
+    {% else %}
+        <a href="#" class="text-primary">Buscar</a>
+        <small class="text-muted">Tendras suerte?</small>
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <form action="." method="GET">
+        <label for="q">Busqueda: </label>
+        <input type="text" name="q" value="{{ query|escape }}">
+        <input type="submit" value="Buscar">
+    </form>
+    
+    {% if query %}
+        <h2>Resultado de "{{ query|escape }}":</h2>
+        
+        {% if resultados %}
+            <ul>
+                {% for post in resultados %}
+                    <li>
+                        <a href="/post/{{ post.id }}/">{{ post|escape }}
+                        </a>
+                        </l1>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Ningun resultado</p>
+            {% endif %}
+        {% endif %}
+    {% endblock %}

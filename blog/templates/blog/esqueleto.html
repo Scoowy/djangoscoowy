@@ -16,14 +16,14 @@
     </head>
     <header class="my-5">
         <nav class="navbar fixed-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="{% url 'lista_post' %}">Scoowy Blog</a>
+            <a class="navbar-brand" href="/">Scoowy Blog</a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse" id="navbarColor01" style="">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'lista_post' %}"><i class="fas fa-home fa-fw"></i>Home<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fas fa-home fa-fw"></i>Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fas fa-code fa-fw"></i>Proyectos</a>
@@ -35,12 +35,12 @@
                         <a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i>Acera de</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contactanos' %}"><i class="fas fa-envelope fa-fw"></i>Contactanos</a>
+                        <a class="nav-link" href="/contactanos"><i class="fas fa-envelope fa-fw"></i>Contactanos</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" placeholder="Search" type="text">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0" action="/buscar" method="get">
+                    <input class="form-control mr-sm-2" placeholder="Buscar" type="text" name="q">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             </div>
         </nav>
@@ -49,10 +49,12 @@
     <body>
         <div class="container">
             <h1>
-            {% block heading %}<a href="" class="text-primary">Titulo de la seccion</a>{% endblock %}
-            <small class="text-muted">
-            {% block headingsmall %}Subtitulo de la seccion{% endblock %}
-            </small>
+            {% block heading %}
+                <a href="" class="text-primary">Titulo de la seccion</a>
+                {% block headingsmall %}
+                    <small class="text-muted">Subtitulo de la seccion</small>
+                {% endblock %}
+            {% endblock %}
             </h1>
         </div>
         <br>

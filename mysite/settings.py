@@ -123,3 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# Configuraciones para enviar mensajes usando Gmail
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'gahonajuanjo@gmail.com'
+# EMAIL_HOST_PASSWORD = 'ScoowyDs9'
+# EMAIL_PORT = 587

@@ -1,12 +1,11 @@
 {% extends 'blog/esqueleto.html' %}
 {% block heading %}
     <a href="#" class="text-primary">{{ post.titulo }}</a>
-{% endblock %}
-<small class="text-muted">
-{% block headingsmall %}
-    {% if post.subtitulo %}
-        {{ post.subtitulo }}
-    {% endif %}
+    {% block headingsmall %}
+        {% if post.subtitulo %}
+            <small class="text-muted">{{ post.subtitulo }}</small>
+        {% endif %}
+    {% endblock %}
 {% endblock %}
 {% block body %}
     <div class="content container">
