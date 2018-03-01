@@ -28,19 +28,22 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'scoowy.pythonanywhere.com',
     '127.0.0.1',
+    '127.0.0.1:8000',
+    'localhost:8000',
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
+    # 'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
 ]
 
 MIDDLEWARE = [
@@ -121,8 +124,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 
 # Configuraciones para enviar mensajes usando Gmail

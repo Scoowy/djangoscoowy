@@ -6,48 +6,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Scoowy Blog{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
         <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.6/css/all.css">
-        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-        <script src="{% static 'js/tooltip.min.js' %}"></script>
-        <script src="{% static 'js/popper.min.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'blog/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'blog/js/tooltip.min.js' %}"></script>
+        <script src="{% static 'blog/js/popper.min.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
     </head>
-    <header class="my-5">
-        <nav class="navbar fixed-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Scoowy Blog</a>
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbarColor01" style="">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/"><i class="fas fa-home fa-fw"></i>Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-code fa-fw"></i>Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-images fa-fw"></i>Imagenes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-info-circle fa-fw"></i>Acera de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contactanos"><i class="fas fa-envelope fa-fw"></i>Contactanos</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0" action="/buscar" method="get">
-                    <input class="form-control mr-sm-2" placeholder="Buscar" type="text" name="q">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
-                </form>
-            </div>
-        </nav>
-        <br>
-    </header>
+    {% include 'blog/includes/barra_nav.html' %}
     <body>
-        <div class="container">
+        <div class="container" style="min-height:300px;">
             <h1>
             {% block heading %}
                 <a href="" class="text-primary">Titulo de la seccion</a>

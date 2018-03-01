@@ -16,21 +16,20 @@
         <input type="text" name="q" value="{{ query|escape }}">
         <input type="submit" value="Buscar">
     </form>
-    
+
     {% if query %}
         <h2>Resultado de "{{ query|escape }}":</h2>
-        
+
         {% if resultados %}
             <ul>
                 {% for post in resultados %}
                     <li>
-                        <a href="/post/{{ post.id }}/">{{ post|escape }}
-                        </a>
-                        </l1>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>Ningun resultado</p>
-            {% endif %}
+                        <a href="/blog/post/{{ post.id }}/">{{ post|escape }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ningun resultado</p>
         {% endif %}
-    {% endblock %}
+    {% endif %}
+{% endblock %}

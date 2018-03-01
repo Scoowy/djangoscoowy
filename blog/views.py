@@ -9,6 +9,10 @@ from .models import Post
 from .forms import ContactanosForm
 
 
+def index(request):
+    return render(request, 'blog/index.html')
+
+
 def lista_post(request):
     # fechaPublicacion devuelve mas antigua
     # -fechaPublicacion devuelve mas actual
@@ -34,7 +38,6 @@ def buscar(request):
     else:
         resultados = []
     numResultados = len(resultados)
-    print(resultados)
     return render_to_response('blog/busqueda.html', {'resultados': resultados, 'query': query, 'numResultados': numResultados})
 
 
