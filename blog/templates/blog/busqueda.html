@@ -11,25 +11,38 @@
     {% endif %}
 {% endblock %}
 {% block body %}
-    <form action="." method="GET">
-        <label for="q">Busqueda: </label>
-        <input type="text" name="q" value="{{ query|escape }}">
-        <input type="submit" value="Buscar">
-    </form>
-
+<div class="content container">
+    <div class="col-md-12">
+        <form action="." method="GET">
+            <div class="form-group row">
+                <div class="col-md-8">
+                    {# <label class="col-md-2 col-form-label" for="q">Busqueda:</label> #}
+                    <input type="text" name="q" value="{{ query|escape }}" class="form-control">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
     {% if query %}
         <h2>Resultado de "{{ query|escape }}":</h2>
 
         {% if resultados %}
-            <ul>
+            <ul class="list-group">
                 {% for post in resultados %}
-                    <li>
-                        <a href="/blog/post/{{ post.id }}/">{{ post|escape }}</a>
-                    </li>
+                    <a href="{% url 'post_completo' post.id %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ post|escape }}</h5>
+                            {# <a href="/blog/post/{{ post.id }}/">{{ post|escape }}</a> #}
+                            <small class="text-muted">{{ post.fechaPublicacion }}</small>
+                        </div>
+                    </a>
                 {% endfor %}
             </ul>
         {% else %}
             <p>Ningun resultado</p>
         {% endif %}
     {% endif %}
+</div>
 {% endblock %}

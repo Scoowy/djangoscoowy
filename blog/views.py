@@ -42,7 +42,7 @@ def buscar(request):
 
 
 def contactanos(request):
-    if request.method == 'POST':
+    if request.method == 'post':
         form = ContactanosForm(request.POST)
         if form.is_valid():
             topic = form.clean_data['topic']

@@ -16,7 +16,7 @@
     </head>
     {% include 'blog/includes/barra_nav.html' %}
     <body>
-        <div class="container" style="min-height:300px;">
+        <div class="container">
             <h1>
             {% block heading %}
                 <a href="" class="text-primary">Titulo de la seccion</a>
@@ -28,10 +28,10 @@
         </div>
         <br>
         {% block body %}{% endblock %}
-        <br>
+        <br class="mt-0">
         <!-- Pie de Pagina -->
         <footer class="footer">
-            <div class="container py-md-1">
+            <div class="container py-md-2">
                 <p class="my-md-0">
                     <a href="{% url 'lista_post' %}" data-toggle="tooltip" data-placement="auto" title="Scoowy Blog">Scoowy Blog</a> por <a href="#" data-toggle="tooltip" data-placement="auto" title="Scoowy">Juan Gahona</a> publicada bajo licencia <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" data-toggle="tooltip" data-placement="auto" title="Creative Commons Reconocimiento 4.0 Internacional"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
                 </p>

@@ -19,7 +19,7 @@ class Post(models.Model):
     def numeroDiasPublicado(self):
         numDias = 0
         if self.fechaPublicacion:
-            fechaActual = datetime.now()
+            fechaActual = timezone.now()
             numDias = fechaActual - self.fechaPublicacion
             numDias = numDias.days
 
@@ -27,8 +27,24 @@ class Post(models.Model):
         else:
             return numDias
 
+    def isPublicado(self):
+        if self.fechaPublicacion:
+            return True
+        else:
+            return False
+
+    def propFechaCreacion(self):
+        return self.fechaCreacion
+    propFechaCreacion.short_description = "Creado el:"
+    creado = property(propFechaCreacion)
+
+
     def __str__(self):
         return self.titulo
+
+    isPublicado.boolean = True
+    isPublicado.short_description = "Publicado"
+    numeroDiasPublicado.short_description = "Dias Pub."
 
 class Comentario(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -39,6 +55,14 @@ class Comentario(models.Model):
     likes = models.IntegerField(default=0)
     dislikes = models.IntegerField(default=0)
     activo = models.BooleanField(default=True)
+
+    def desActivar(self):
+        if self.activo:
+            self.activo = False
+            self.save()
+        else:
+            self.activo = True
+            self.save()
 
     def isActivo(self):
         return activo
